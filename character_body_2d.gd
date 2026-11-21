@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var health = 100
 @onready var _animated_sprite = $AnimatedSprite2D
 
 func _process(_delta):
@@ -7,7 +7,9 @@ func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
 		_animated_sprite.play("run")
 	elif Input.is_action_pressed("ui_left"):
-		_animated_sprite.play_backwards("run")
+		_animated_sprite.play("run_backwards")
+	elif Input.is_action_pressed("jump"):
+		_animated_sprite.play("jump")
 	else:
 		_animated_sprite.stop()
 		
@@ -33,3 +35,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func _on_pickup_area_area_entered(area):
+	if area.is_in_group("object") and not $holding.visible:
+		area.queue_free()
+		$holding.visible = true
+		health = +1

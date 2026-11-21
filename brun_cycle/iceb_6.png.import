@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p462fc446qv1"
-path="res://.godot/imported/run-8.png-481347414b275b7a0ff8119bee388e05.ctex"
+uid="uid://c0r0wbvr7y4o4"
+path="res://.godot/imported/iceb_6.png-1d369a96f0328b4ca062438ae4b54f89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://run-8.png"
-dest_files=["res://.godot/imported/run-8.png-481347414b275b7a0ff8119bee388e05.ctex"]
+source_file="res://brun_cycle/iceb_6.png"
+dest_files=["res://.godot/imported/iceb_6.png-1d369a96f0328b4ca062438ae4b54f89.ctex"]
 
 [params]
 
