@@ -29,6 +29,41 @@
 [ext_resource type="Texture2D" uid="uid://c5kwy1ono64qr" path="res://heartb/image (3).webp" id="25_2wy2p"]
 [ext_resource type="Texture2D" uid="uid://dulkc20ajmrh3" path="res://heartb/image (4).webp" id="26_w6pri"]
 [ext_resource type="Texture2D" uid="uid://d26doanptckkm" path="res://heartb/image.webp" id="27_nha2g"]
+[ext_resource type="Texture2D" uid="uid://ipumx1nnjipj" path="res://snow/snow1.webp" id="30_1am0g"]
+[ext_resource type="Texture2D" uid="uid://cm06vlxbchsnf" path="res://heat/cold.webp" id="31_nha2g"]
+[ext_resource type="Texture2D" uid="uid://bvmbse6dn3qpl" path="res://heat/mid.webp" id="32_4bn0x"]
+[ext_resource type="Texture2D" uid="uid://cyv7qqbbh583y" path="res://heat/hot.webp" id="33_m7n71"]
+
+[sub_resource type="Gradient" id="Gradient_1am0g"]
+offsets = PackedFloat32Array(0, 0.6056338, 0.8239437)
+colors = PackedColorArray(0.090114556, 0.21678424, 0.5484307, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nha2g"]
+gradient = SubResource("Gradient_1am0g")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w6pri"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(900, 300, 1)
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 13.989984
+orbit_velocity_min = -0.009999906
+orbit_velocity_max = 0.010000096
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = -2.2351742e-05
+gravity = Vector3(0, 50, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 2.6699977
+damping_min = 5.333
+damping_max = 9.333
+scale_min = 0.01
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_nha2g")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = -2.2351742e-08
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.05
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gabc6"]
 animations = [{
@@ -125,19 +160,22 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("23_twhnx")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("24_1am0g")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("25_2wy2p")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("26_w6pri")
 }, {
-"duration": 1.0,
+"duration": 0.5,
+"texture": ExtResource("27_nha2g")
+}, {
+"duration": 0.5,
 "texture": ExtResource("27_nha2g")
 }],
 "loop": 1,
@@ -172,8 +210,26 @@ sources/0 = SubResource("TileSetAtlasSource_3xwg0")
 
 [node name="Node" type="Node" unique_id=2063611799]
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=653387577]
+position = Vector2(205, 289)
+amount = 10
+texture = ExtResource("30_1am0g")
+lifetime = 3.0
+speed_scale = 0.8
+randomness = 0.06
+process_material = SubResource("ParticleProcessMaterial_w6pri")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="GPUParticles2D" unique_id=1144173224]
+position = Vector2(1472, -26)
+amount = 10
+texture = ExtResource("30_1am0g")
+lifetime = 3.0
+speed_scale = 0.8
+randomness = 0.06
+process_material = SubResource("ParticleProcessMaterial_w6pri")
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1959861858]
-position = Vector2(68, 365)
+position = Vector2(68, 366)
 script = ExtResource("1_r657h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=676882142]
@@ -197,9 +253,13 @@ visible = false
 position = Vector2(115.625, -67.37499)
 scale = Vector2(0.4074219, 0.4074219)
 sprite_frames = SubResource("SpriteFrames_8jewq")
-animation = &"heartb"
+animation = &"heart"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1710547734]
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1053617162]
+position = Vector2(133, -78)
+position_smoothing_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2065619172]
 position = Vector2(68, 365)
@@ -211,5 +271,34 @@ tile_set = SubResource("TileSet_85l3h")
 position = Vector2(509, 317)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1387833187]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1645252036]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=128456759]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -303.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="cold" type="Sprite2D" parent="CanvasLayer" unique_id=621410114]
+position = Vector2(942, 577)
+scale = Vector2(0.52734363, 0.52734363)
+texture = ExtResource("31_nha2g")
+
+[node name="hot" type="Sprite2D" parent="CanvasLayer" unique_id=444534833]
+position = Vector2(942, 577)
+scale = Vector2(0.52734363, 0.52734363)
+texture = ExtResource("33_m7n71")
+
+[node name="mid" type="Sprite2D" parent="CanvasLayer" unique_id=518717782]
+position = Vector2(942, 577)
+scale = Vector2(0.52734363, 0.52734363)
+texture = ExtResource("32_4bn0x")
 
 [connection signal="area_entered" from="Player/pickupArea" to="Player" method="_on_pickup_area_area_entered"]

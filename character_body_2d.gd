@@ -8,15 +8,12 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -29,8 +26,8 @@ func _on_pickup_area_area_entered(area):
 	if area.is_in_group("object") and not $holding.visible:
 		area.queue_free()
 		$holding.visible = true
-func _unhandled_input(event):
-	if $holding.visible and not is_playing_heart and event.is_action_pressed("ui_right"):
+func _input(event):
+	if $holding.visible and not is_playing_heart and Input.is_action_pressed("ui_right"):
 		is_playing_heart = true
 		$AnimatedSprite2D.visible = false
 		$holding.play("heart")
@@ -39,7 +36,7 @@ func _unhandled_input(event):
 		$AnimatedSprite2D.visible = true
 		is_playing_heart = false
 		health += 1
-	elif $holding.visible and not is_playing_heart and event.is_action_pressed("ui_left"):
+	elif $holding.visible and not is_playing_heart and Input.is_action_pressed("ui_left"):
 		is_playing_heart = true
 		$AnimatedSprite2D.visible = false
 		$holding.play("heartb")
@@ -47,8 +44,16 @@ func _unhandled_input(event):
 		$holding.visible = false
 		$AnimatedSprite2D.visible = true
 		is_playing_heart = false
+		
+	if health = 1
+		$hot.visible = true
+	if health = 0
+		$mid.visible = true
+	if health = -1
+		$cold.visible = true
+health <= - 1
+	
 func _process(_delta):
-	# Stop movement animations from overriding the heart animation
 	if is_playing_heart:
 		return
 	if Input.is_action_pressed("ui_right"):
@@ -59,3 +64,4 @@ func _process(_delta):
 		_animated_sprite.play("jump")
 	else:
 		_animated_sprite.stop()
+		
