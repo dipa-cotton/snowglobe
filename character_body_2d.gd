@@ -105,7 +105,7 @@ func _on_spike_area_entered(area: Area2D) -> void:
 	prints(health, "spike area1")
 	updateBar()
 func updateBar():
-	$"../CanvasLayer/health_label".text = "[color=red]Health: [b]%d[/b][/color]" % health
+	$"../CanvasLayer/health_label".text = "[color=red][font=res://roboto.ttf][font_size=32]Health: %d" % health
 	if health == 1:
 		$"../CanvasLayer/cold".visible = true
 		$"../CanvasLayer/hot".visible = false
@@ -130,3 +130,4 @@ func _on_spike_2_area_entered(area: Area2D) -> void:
 	## Stop the timer if the character leaves the light early
 	#if area.is_in_group("light"):
 		#light_timer.stop()
+" "

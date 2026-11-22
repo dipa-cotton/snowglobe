@@ -16,12 +16,12 @@ scale = Vector2(0.5984375, 0.73703706)
 texture = ExtResource("1_1n0d2")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=394522908]
-position = Vector2(558, 328)
+position = Vector2(559, 304)
 scale = Vector2(0.65, 0.653125)
 texture = ExtResource("2_y5hus")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1383346242]
-position = Vector2(917, 331.00003)
+position = Vector2(566.99994, 412.00003)
 scale = Vector2(0.3857422, 0.43164063)
 script = ExtResource("3_y5hus")
 
@@ -33,3 +33,11 @@ texture = ExtResource("3_oiuna")
 position = Vector2(5.1848407, 495.78278)
 scale = Vector2(1, 0.9999999)
 shape = SubResource("RectangleShape2D_gabc6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=272776434]
+offset_left = 452.0
+offset_top = 526.0
+offset_right = 691.0
+offset_bottom = 602.0
+bbcode_enabled = true
+text = "[font=res://roboto.ttf][font_size=32] click to start!"

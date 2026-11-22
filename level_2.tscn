@@ -10043,12 +10043,16 @@ grow_vertical = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="health_label" type="RichTextLabel" parent="CanvasLayer" unique_id=1228503832]
+anchors_preset = -1
+anchor_left = -0.012152778
+anchor_top = -0.012345679
+anchor_right = 0.0017361111
 offset_left = 978.0
 offset_top = 612.0
 offset_right = 1112.0
 offset_bottom = 652.0
 bbcode_enabled = true
-text = "[color=red][b]Health: 3[/b]"
+text = "[color=red][font=res://roboto.ttf][font_size=32]Health: 3"
 metadata/_edit_use_anchors_ = true
 
 [node name="mid" type="Sprite2D" parent="CanvasLayer" unique_id=518717782]
