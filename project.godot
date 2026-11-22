@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="freeze"
-run/main_scene="res://node.tscn"
+run/main_scene="uid://ddx6h0e1374ix"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/size/mode=4
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
