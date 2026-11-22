@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://fkqf5vm7efj5"]
 
 [ext_resource type="Texture2D" uid="uid://ri8xbym1la5e" path="res://black.png" id="1_yosh2"]
+[ext_resource type="Texture2D" uid="uid://c2mqswkurlse4" path="res://survive.webp" id="2_bfhsa"]
 
 [node name="Node2D" type="Node2D" unique_id=1201610413]
 
@@ -8,3 +9,8 @@
 position = Vector2(1001.6954, 510.1906)
 scale = Vector2(0.5546875, 0.4953125)
 texture = ExtResource("1_yosh2")
+
+[node name="Survive" type="Sprite2D" parent="." unique_id=333980359]
+position = Vector2(581.00006, 324)
+scale = Vector2(0.41927084, 0.41927084)
+texture = ExtResource("2_bfhsa")

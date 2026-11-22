@@ -10014,7 +10014,7 @@ position = Vector2(133, -78)
 position_smoothing_enabled = true
 
 [node name="flag" type="Area2D" parent="." unique_id=1153725320 groups=["flag", "object"]]
-position = Vector2(7139, 615)
+position = Vector2(7175, 547)
 script = ExtResource("37_x7arg")
 
 [node name="Sprite2D" type="Sprite2D" parent="flag" unique_id=705629964 groups=["flag"]]
@@ -10490,25 +10490,73 @@ position = Vector2(4945, 234)
 position = Vector2(1399, 417)
 shape = SubResource("RectangleShape2D_gabc6")
 
-[node name="breakarea11" type="Area2D" parent="." unique_id=1142730028 groups=["breakice"]]
-position = Vector2(5577, 24)
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1559251400]
+offset_left = 6841.0
+offset_top = 569.0
+offset_right = 7058.0
+offset_bottom = 652.0
+bbcode_enabled = true
+text = "[font=res://roboto.ttf][font_size=32] you made it!"
 
-[node name="breakice2" type="AnimatedSprite2D" parent="breakarea11" unique_id=757912561 groups=["breakice"]]
-position = Vector2(1558.0001, 423)
-scale = Vector2(0.27222225, 0.27222228)
-sprite_frames = SubResource("SpriteFrames_ftsj4")
-animation = &"breakice"
+[node name="object2" parent="." unique_id=105427811 instance=ExtResource("48_k6uew")]
+position = Vector2(2085, 60.999996)
+scale = Vector2(0.52687496, 0.49656254)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="breakarea11" unique_id=549562269 groups=["breakice"]]
-position = Vector2(1576, 430.25)
-shape = SubResource("RectangleShape2D_lm6bd")
+[node name="Sprite2D2" type="Sprite2D" parent="object2" unique_id=382996594 groups=["object"]]
+position = Vector2(82.236084, 1.6646957)
+scale = Vector2(0.53173184, 0.5497954)
+texture = ExtResource("49_jvhe8")
 
-[node name="breakice11" type="StaticBody2D" parent="." unique_id=1995272329]
-position = Vector2(5746, 40)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="object2" unique_id=1684936303 groups=["object"]]
+position = Vector2(81, 0)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_dltcj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="breakice11" unique_id=651179751]
-position = Vector2(1399, 417)
-shape = SubResource("RectangleShape2D_gabc6")
+[node name="object3" parent="." unique_id=370021916 instance=ExtResource("48_k6uew")]
+position = Vector2(4537, 628)
+scale = Vector2(0.52687496, 0.49656254)
+
+[node name="Sprite2D2" type="Sprite2D" parent="object3" unique_id=522873519 groups=["object"]]
+position = Vector2(82.236084, 1.6646957)
+scale = Vector2(0.53173184, 0.5497954)
+texture = ExtResource("49_jvhe8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="object3" unique_id=1039105602 groups=["object"]]
+position = Vector2(81, 0)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_dltcj")
+
+[node name="object4" parent="." unique_id=979278253 instance=ExtResource("48_k6uew")]
+position = Vector2(6575, 642)
+scale = Vector2(0.52687496, 0.49656254)
+
+[node name="Sprite2D2" type="Sprite2D" parent="object4" unique_id=683201414 groups=["object"]]
+position = Vector2(82.236084, 1.6646957)
+scale = Vector2(0.53173184, 0.5497954)
+texture = ExtResource("49_jvhe8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="object4" unique_id=910227565 groups=["object"]]
+position = Vector2(81, 0)
+scale = Vector2(1.0000001, 1.0000001)
+shape = SubResource("CircleShape2D_dltcj")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="." unique_id=524584593]
+position = Vector2(4722, 543)
+amount = 10
+texture = ExtResource("1_kxd3k")
+lifetime = 3.0
+speed_scale = 0.8
+randomness = 0.06
+process_material = SubResource("ParticleProcessMaterial_w6pri")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="GPUParticles2D2" unique_id=1704269829]
+position = Vector2(1472, -26)
+amount = 10
+texture = ExtResource("1_kxd3k")
+lifetime = 3.0
+speed_scale = 0.8
+randomness = 0.06
+process_material = SubResource("ParticleProcessMaterial_w6pri")
 
 [connection signal="area_entered" from="Player/pickupArea" to="Player" method="_on_pickup_area_area_entered"]
 [connection signal="area_entered" from="flag" to="Player" method="_on_flag_area_entered"]
