@@ -196,10 +196,6 @@ animations = [{
 radius = 62.875
 height = 183.75
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n2hr2"]
-radius = 60.0
-height = 162.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_8jewq"]
 animations = [{
 "frames": [{
@@ -9979,8 +9975,8 @@ position = Vector2(126, -77)
 shape = SubResource("CapsuleShape2D_i7urw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=816227704]
-position = Vector2(123, -63)
-shape = SubResource("CapsuleShape2D_n2hr2")
+position = Vector2(126, -77)
+shape = SubResource("CapsuleShape2D_i7urw")
 
 [node name="holding" type="AnimatedSprite2D" parent="Player" unique_id=1963886939]
 visible = false
@@ -10031,20 +10027,20 @@ bbcode_enabled = true
 text = "[color=red][b]Health: 3[/b]"
 metadata/_edit_use_anchors_ = true
 
+[node name="mid" type="Sprite2D" parent="CanvasLayer" unique_id=518717782]
+position = Vector2(942, 577)
+scale = Vector2(0.5273436, 0.5273436)
+texture = ExtResource("41_7nn81")
+
 [node name="cold" type="Sprite2D" parent="CanvasLayer" unique_id=621410114]
 position = Vector2(942, 577)
 scale = Vector2(0.52734363, 0.52734363)
 texture = ExtResource("39_72x67")
 
 [node name="hot" type="Sprite2D" parent="CanvasLayer" unique_id=444534833]
-position = Vector2(942, 577)
+position = Vector2(942.00006, 578)
 scale = Vector2(0.52734363, 0.52734363)
 texture = ExtResource("40_ubiow")
-
-[node name="mid" type="Sprite2D" parent="CanvasLayer" unique_id=518717782]
-position = Vector2(942, 577)
-scale = Vector2(0.52734363, 0.52734363)
-texture = ExtResource("41_7nn81")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1611863127]
 layer = -9

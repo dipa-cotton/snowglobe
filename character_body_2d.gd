@@ -38,18 +38,20 @@ func _on_pickup_area_area_entered(area):
 	if area.is_in_group("object") and not $holding.visible:
 		area.queue_free()
 		$holding.visible = true
+	
 	if area.is_in_group("breakice"):
 		print("ice")
-		area.get_node("breakice2").play("breakice")
-		await get_tree().create_timer(3.0).timeout
-		$"../breakarea/breakice2".visible = false
-		$"../breakice".hide()
-		$"../breakice/CollisionShape2D".set_deferred("disabled", true)
-		await get_tree().create_timer(3.0).timeout
-		area.get_node("breakice2").stop()
-		$"../breakarea/breakice2".visible = true
-		$"../breakice".show()
-		$"../breakice/CollisionShape2D".set_deferred("disabled", false)
+		if !area.get_node("breakice2").is_playing():
+			area.get_node("breakice2").play("breakice")
+			await get_tree().create_timer(3.0).timeout
+			$"../breakarea/breakice2".visible = false
+			$"../breakice".hide()
+			$"../breakice/CollisionShape2D".set_deferred("disabled", true)
+			await get_tree().create_timer(3.0).timeout
+			area.get_node("breakice2").stop()
+			$"../breakarea/breakice2".visible = true
+			$"../breakice".show()
+			$"../breakice/CollisionShape2D".set_deferred("disabled", false)
 		
 func _process(_delta):	
 	if $holding.visible and not is_playing_heart:
@@ -105,11 +107,15 @@ func _on_spike_area_entered(area: Area2D) -> void:
 func updateBar():
 	$"../CanvasLayer/health_label".text = "[color=red]Health: [b]%d[/b][/color]" % health
 	if health == 1:
+		$"../CanvasLayer/cold".visible = true
 		$"../CanvasLayer/hot".visible = false
 		$"../CanvasLayer/mid".visible = false
 	if health == 2:
 		$"../CanvasLayer/mid".visible = true
+		$"../CanvasLayer/cold".visible = false
+		$"../CanvasLayer/hot".visible = false
 	if health >= 3:
+		$"../CanvasLayer/hot".visible = true
 		$"../CanvasLayer/cold".visible = false
 		$"../CanvasLayer/mid".visible = false
 func _on_spike_2_area_entered(area: Area2D) -> void:

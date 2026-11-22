@@ -185,11 +185,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sps8e"]
-size = Vector2(191.75, 180.25)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvft3"]
+radius = 62.875
+height = 183.75
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_emfp8"]
-size = Vector2(194, 185.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0tj8u"]
+radius = 62.875
+height = 183.75
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8jewq"]
 animations = [{
@@ -9951,11 +9953,11 @@ autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/pickupArea" unique_id=1320851735]
 position = Vector2(135.125, -75.875)
-shape = SubResource("RectangleShape2D_sps8e")
+shape = SubResource("CapsuleShape2D_lvft3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=816227704]
 position = Vector2(136, -76)
-shape = SubResource("RectangleShape2D_emfp8")
+shape = SubResource("CapsuleShape2D_0tj8u")
 
 [node name="holding" type="AnimatedSprite2D" parent="Player" unique_id=1963886939]
 visible = false
@@ -10012,6 +10014,11 @@ bbcode_enabled = true
 text = "[color=red][b]Health: 3[/b]"
 metadata/_edit_use_anchors_ = true
 
+[node name="mid" type="Sprite2D" parent="CanvasLayer" unique_id=518717782]
+position = Vector2(942, 577)
+scale = Vector2(0.52734363, 0.52734363)
+texture = ExtResource("42_cd3kd")
+
 [node name="cold" type="Sprite2D" parent="CanvasLayer" unique_id=621410114]
 position = Vector2(942, 577)
 scale = Vector2(0.52734363, 0.52734363)
@@ -10021,11 +10028,6 @@ texture = ExtResource("40_1d8vu")
 position = Vector2(942, 577)
 scale = Vector2(0.52734363, 0.52734363)
 texture = ExtResource("41_n2i7i")
-
-[node name="mid" type="Sprite2D" parent="CanvasLayer" unique_id=518717782]
-position = Vector2(942, 577)
-scale = Vector2(0.52734363, 0.52734363)
-texture = ExtResource("42_cd3kd")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1611863127]
 layer = -9

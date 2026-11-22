@@ -272,8 +272,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_s4p7v"]
 radius = 74.06078
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftsj4"]
-size = Vector2(460.1068, 107.80759)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_nxjh1"]
+points = PackedVector2Array(280.10693, -134.75928, 187.70044, 19.25122, 129.94653, -215.61499, 87.593506, -11.550781, 60.6416, -96.25659, -0.9626465, 0, -27.914307, -123.208496, -74.117676, 23.101563, -89.5188, -15.401123, -120.3208, 26.951904, -170.37427, -215.61499, -308.9839, 50.053467, 156.89844, 46.203125, 314.75928, 42.353027)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ftsj4"]
 animations = [{
@@ -293,13 +293,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lm6bd"]
-size = Vector2(266, 226)
+size = Vector2(353, 271)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gabc6"]
 size = Vector2(264.5, 230.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4p7v"]
-size = Vector2(157, 200)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_dff1k"]
+points = PackedVector2Array(17, 142, 83, -58, -71, -59)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_iyds7"]
+points = PackedVector2Array(17, 142, 83, -58, -71, -59)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_f08ys"]
+points = PackedVector2Array(5.5, 130, 83, -58, -71, -59)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dltcj"]
 radius = 37.01351
@@ -10020,6 +10026,11 @@ bbcode_enabled = true
 text = "[color=red][b]Health: 3[/b]"
 metadata/_edit_use_anchors_ = true
 
+[node name="mid" type="Sprite2D" parent="CanvasLayer" unique_id=518717782]
+position = Vector2(942, 577)
+scale = Vector2(0.52734363, 0.52734363)
+texture = ExtResource("35_layrk")
+
 [node name="cold" type="Sprite2D" parent="CanvasLayer" unique_id=621410114]
 position = Vector2(942, 577)
 scale = Vector2(0.52734363, 0.52734363)
@@ -10027,13 +10038,8 @@ texture = ExtResource("33_7nsn6")
 
 [node name="hot" type="Sprite2D" parent="CanvasLayer" unique_id=444534833]
 position = Vector2(942, 577)
-scale = Vector2(0.52734363, 0.52734363)
+scale = Vector2(0.5273436, 0.5273436)
 texture = ExtResource("34_wq6d8")
-
-[node name="mid" type="Sprite2D" parent="CanvasLayer" unique_id=518717782]
-position = Vector2(942, 577)
-scale = Vector2(0.52734363, 0.52734363)
-texture = ExtResource("35_layrk")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1611863127]
 layer = -9
@@ -10065,7 +10071,7 @@ texture = ExtResource("37_84ct4")
 z_index = 7
 position = Vector2(905.25, 550)
 scale = Vector2(0.25972226, 0.25972223)
-shape = SubResource("RectangleShape2D_ftsj4")
+shape = SubResource("ConvexPolygonShape2D_nxjh1")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=911534926]
 stream = ExtResource("38_i5xja")
@@ -10081,7 +10087,7 @@ sprite_frames = SubResource("SpriteFrames_ftsj4")
 animation = &"breakice"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="breakarea" unique_id=1147743606 groups=["breakice"]]
-position = Vector2(1332, 410)
+position = Vector2(1392, 391)
 shape = SubResource("RectangleShape2D_lm6bd")
 
 [node name="breakice" type="StaticBody2D" parent="." unique_id=435455662]
@@ -10101,7 +10107,7 @@ sprite_frames = SubResource("SpriteFrames_ftsj4")
 animation = &"breakice"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="breakarea2" unique_id=1832043794 groups=["breakice"]]
-position = Vector2(1501, 426)
+position = Vector2(1569, 424)
 shape = SubResource("RectangleShape2D_lm6bd")
 
 [node name="breakice2" type="StaticBody2D" parent="." unique_id=9364463]
@@ -10120,8 +10126,8 @@ scale = Vector2(0.2720486, 0.2777778)
 texture = ExtResource("46_hlf5m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spike2" unique_id=1258707815]
-position = Vector2(647.5, 262)
-shape = SubResource("RectangleShape2D_s4p7v")
+position = Vector2(632, 244)
+shape = SubResource("ConvexPolygonShape2D_dff1k")
 
 [node name="spike3" type="Area2D" parent="." unique_id=113146020]
 position = Vector2(-77, -198)
@@ -10132,8 +10138,8 @@ scale = Vector2(0.2720486, 0.2777778)
 texture = ExtResource("46_hlf5m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spike3" unique_id=1538670689]
-position = Vector2(647.5, 262)
-shape = SubResource("RectangleShape2D_s4p7v")
+position = Vector2(635, 234)
+shape = SubResource("ConvexPolygonShape2D_iyds7")
 
 [node name="spike4" type="Area2D" parent="." unique_id=1298986879]
 position = Vector2(647, -176)
@@ -10145,7 +10151,7 @@ texture = ExtResource("46_hlf5m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spike4" unique_id=1201242293]
 position = Vector2(647.5, 262)
-shape = SubResource("RectangleShape2D_s4p7v")
+shape = SubResource("ConvexPolygonShape2D_f08ys")
 
 [node name="object" parent="." unique_id=807184597 instance=ExtResource("30_rn8q4")]
 position = Vector2(569.99994, 453.99997)
