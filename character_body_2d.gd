@@ -1,18 +1,19 @@
 extends CharacterBody2D
 
+@export var next_level = 2
 var health: int = 3:
 	set(value):
 		health = value
 		if health <= 0:
 			Global.last_level = get_tree().current_scene.scene_file_path
 			get_tree().change_scene_to_file("res://dead.tscn")
-			
+			health = 3
 var level = 0
 var is_playing_heart = false
 @onready var _animated_sprite = $AnimatedSprite2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -600
+const JUMP_VELOCITY = -700
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -20,6 +21,10 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("reset"):
+		print("?")
+		#Global.last_level = get_tree().current_scene.scene_file_path
+		get_tree().reload_current_scene()
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
@@ -40,7 +45,11 @@ func _on_pickup_area_area_entered(area):
 		$"../breakarea/breakice2".visible = false
 		$"../breakice".hide()
 		$"../breakice/CollisionShape2D".set_deferred("disabled", true)
-	
+		await get_tree().create_timer(3.0).timeout
+		area.get_node("breakice2").stop()
+		$"../breakarea/breakice2".visible = true
+		$"../breakice".show()
+		$"../breakice/CollisionShape2D".set_deferred("disabled", false)
 		
 func _process(_delta):	
 	if $holding.visible and not is_playing_heart:
@@ -81,15 +90,17 @@ func _process(_delta):
 		_animated_sprite.stop()
 
 func _on_flag_area_entered(area: Area2D) -> void:
-	level += 1
-	print(level)
-	print("level!")
-	get_tree().change_scene_to_file("res://level_2.tscn")
+	#area.next_level 
+	get_tree().change_scene_to_file("res://level_" + str(next_level) + ".tscn")
+	#level += 1
+	#print(level)
+	#print("level!")
+	#get_tree().change_scene_to_file("res://level_2.tscn")
 
 	
 func _on_spike_area_entered(area: Area2D) -> void:
 	health -= 2
-	print(health)
+	prints(health, "spike area1")
 	updateBar()
 func updateBar():
 	$"../CanvasLayer/health_label".text = "[color=red]Health: [b]%d[/b][/color]" % health
@@ -103,7 +114,8 @@ func updateBar():
 		$"../CanvasLayer/mid".visible = false
 func _on_spike_2_area_entered(area: Area2D) -> void:
 	health -= 2
-	print(health)
+	print(area.name)
+	prints(health, "spike area2")
 	updateBar()
 #func _on_light_area_entered(area: Area2D) -> void:
 		#light_timer.start()

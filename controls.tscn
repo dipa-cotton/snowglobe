@@ -9938,6 +9938,7 @@ process_material = SubResource("ParticleProcessMaterial_w6pri")
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1959861858]
 position = Vector2(68, 366)
 script = ExtResource("2_6fpfl")
+next_level = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=676882142]
 position = Vector2(118, -71)
@@ -10101,6 +10102,14 @@ offset_right = 1157.0
 offset_bottom = 363.0
 bbcode_enabled = true
 text = "see your health bar in the corner? don't let it run out!"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=952486325]
+offset_left = 2814.0
+offset_top = 144.0
+offset_right = 3047.0
+offset_bottom = 210.0
+bbcode_enabled = true
+text = "click R to reset if you need it!"
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=242528557]
 layer = -9
