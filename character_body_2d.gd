@@ -105,3 +105,10 @@ func _on_spike_2_area_entered(area: Area2D) -> void:
 	health -= 2
 	print(health)
 	updateBar()
+#func _on_light_area_entered(area: Area2D) -> void:
+		#light_timer.start()
+#
+#func _on_light_area_exited(area: Area2D) -> void:
+	## Stop the timer if the character leaves the light early
+	#if area.is_in_group("light"):
+		#light_timer.stop()
