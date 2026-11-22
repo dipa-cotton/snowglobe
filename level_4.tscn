@@ -9937,7 +9937,7 @@ texture = ExtResource("37_ufjsh")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_46val")
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_784sg"]
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_d8dyn"]
 points = PackedVector2Array(280.10693, -134.75928, 187.70044, 19.25122, 129.94653, -215.61499, 87.593506, -11.550781, 60.6416, -96.25659, -0.9626465, 0, -27.914307, -123.208496, -74.117676, 23.101563, -89.5188, -15.401123, -120.3208, 26.951904, -170.37427, -215.61499, -308.9839, 50.053467, 156.89844, 46.203125, 314.75928, 42.353027)
 
 [node name="Node" type="Node" unique_id=2063611799]
@@ -10128,7 +10128,7 @@ position = Vector2(1399, 417)
 shape = SubResource("RectangleShape2D_gabc6")
 
 [node name="spike4" type="Area2D" parent="." unique_id=1298986879]
-position = Vector2(647, -176)
+position = Vector2(648, -176)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="spike4" unique_id=597368409]
 position = Vector2(1026, 684)
@@ -10181,25 +10181,26 @@ position = Vector2(-777.9999, 170)
 scale = Vector2(4.8233323, 2.6666667)
 texture = ExtResource("53_nxjh1")
 
-[node name="spike2" type="Area2D" parent="." unique_id=1473877954]
-position = Vector2(82, 160)
+[node name="spike2" type="Area2D" parent="." unique_id=555926081]
+position = Vector2(37, 154)
 
-[node name="Sprite2D" type="Sprite2D" parent="spike2" unique_id=203414118 groups=["flag"]]
+[node name="Sprite2D" type="Sprite2D" parent="spike2" unique_id=1663418165 groups=["flag"]]
 position = Vector2(861, 527.00006)
 scale = Vector2(0.094675936, 0.09467593)
 texture = ExtResource("44_vt38i")
 
-[node name="Sprite2D2" type="Sprite2D" parent="spike2" unique_id=1461178155 groups=["flag"]]
+[node name="Sprite2D2" type="Sprite2D" parent="spike2" unique_id=442587337 groups=["flag"]]
 position = Vector2(941.00006, 525.00006)
 scale = Vector2(0.094675936, 0.09467593)
 texture = ExtResource("44_vt38i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spike2" unique_id=1060647333 groups=["flag"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike2" unique_id=31269863 groups=["flag"]]
 z_index = 7
 position = Vector2(905.25, 550)
 scale = Vector2(0.25972226, 0.25972223)
-shape = SubResource("ConvexPolygonShape2D_784sg")
+shape = SubResource("ConvexPolygonShape2D_d8dyn")
 
 [connection signal="area_entered" from="Player/pickupArea" to="Player" method="_on_pickup_area_area_entered"]
 [connection signal="area_entered" from="flag" to="Player" method="_on_flag_area_entered"]
-[connection signal="area_entered" from="spike4" to="Player" method="_on_spike_2_area_entered"]
+[connection signal="area_entered" from="spike4" to="Player" method="_on_spike_4_area_entered"]
+[connection signal="area_entered" from="spike2" to="Player" method="_on_spike_2_area_entered"]

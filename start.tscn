@@ -11,17 +11,17 @@ size = Vector2(790.4989, 258.68314)
 [node name="Node2D" type="Node2D" unique_id=75098229]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1679407923]
-position = Vector2(572.5, 393)
-scale = Vector2(0.5984375, 0.73703706)
+position = Vector2(572.5, 322)
+scale = Vector2(0.5984375, 0.60555553)
 texture = ExtResource("1_1n0d2")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=394522908]
-position = Vector2(559, 304)
+position = Vector2(317, 327)
 scale = Vector2(0.65, 0.653125)
 texture = ExtResource("2_y5hus")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1383346242]
-position = Vector2(566.99994, 412.00003)
+position = Vector2(706.99994, 227.00002)
 scale = Vector2(0.3857422, 0.43164063)
 script = ExtResource("3_y5hus")
 
@@ -35,9 +35,10 @@ scale = Vector2(1, 0.9999999)
 shape = SubResource("RectangleShape2D_gabc6")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=272776434]
-offset_left = 452.0
-offset_top = 526.0
-offset_right = 691.0
-offset_bottom = 602.0
+offset_left = 592.0
+offset_top = 340.99997
+offset_right = 831.0
+offset_bottom = 416.99997
 bbcode_enabled = true
 text = "[font=res://roboto.ttf][font_size=32] click to start!"
+metadata/_edit_use_anchors_ = true

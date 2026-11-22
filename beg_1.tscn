@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://beelxf0ct8bqc"]
+
+[ext_resource type="Texture2D" uid="uid://ri8xbym1la5e" path="res://black.png" id="1_6cmcu"]
+[ext_resource type="Texture2D" uid="uid://bpgq7rundlhgo" path="res://beg1.webp" id="1_yfe8f"]
+
+[node name="Node2D" type="Node2D" unique_id=1172645231]
+
+[node name="Black" type="Sprite2D" parent="." unique_id=6179793]
+position = Vector2(735, 386)
+texture = ExtResource("1_6cmcu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1276180057]
+position = Vector2(628, 322)
+scale = Vector2(0.67265624, 0.5179688)
+texture = ExtResource("1_yfe8f")

@@ -118,10 +118,13 @@ func updateBar():
 		$"../CanvasLayer/hot".visible = true
 		$"../CanvasLayer/cold".visible = false
 		$"../CanvasLayer/mid".visible = false
+func _on_spike_4_area_entered(area: Area2D) -> void:
+	health -= 2
+	print(area.name)
+	updateBar()
 func _on_spike_2_area_entered(area: Area2D) -> void:
 	health -= 2
 	print(area.name)
-	prints(health, "spike area2")
 	updateBar()
 #func _on_light_area_entered(area: Area2D) -> void:
 		#light_timer.start()

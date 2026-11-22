@@ -2,11 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://byqkdeup0xtfc" path="res://death_screen.webp" id="1_8f3xj"]
 [ext_resource type="Script" uid="uid://dm2idj1nofky0" path="res://dead.gd" id="1_unegr"]
+[ext_resource type="Texture2D" uid="uid://ri8xbym1la5e" path="res://black.png" id="2_vrggy"]
 
 [node name="Node2D" type="Node2D" unique_id=1191035578]
 script = ExtResource("1_unegr")
 
+[node name="Black" type="Sprite2D" parent="." unique_id=1760114784]
+position = Vector2(170, 215)
+texture = ExtResource("2_vrggy")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1410972316]
-position = Vector2(566, 329)
-scale = Vector2(0.49869788, 0.4231771)
+position = Vector2(588.00006, 334.00003)
+scale = Vector2(0.5957031, 0.5436198)
 texture = ExtResource("1_8f3xj")

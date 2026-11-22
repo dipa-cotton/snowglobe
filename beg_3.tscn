@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bc5lgboucfa07"]
+
+[ext_resource type="Texture2D" uid="uid://bdtvwfefoes3e" path="res://beg_3.webp" id="1_4j6v4"]
+[ext_resource type="Texture2D" uid="uid://ri8xbym1la5e" path="res://black.png" id="1_wkpnr"]
+
+[node name="Node2D" type="Node2D" unique_id=1854079003]
+
+[node name="Black" type="Sprite2D" parent="." unique_id=1048814841]
+position = Vector2(589, 339)
+scale = Vector2(0.33794853, 0.30177373)
+texture = ExtResource("1_wkpnr")
+
+[node name="Beg3" type="Sprite2D" parent="." unique_id=1156596422]
+position = Vector2(588.8889, 330)
+scale = Vector2(0.6092593, 0.60925925)
+texture = ExtResource("1_4j6v4")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://fkqf5vm7efj5"]
+
+[ext_resource type="Texture2D" uid="uid://ri8xbym1la5e" path="res://black.png" id="1_yosh2"]
+
+[node name="Node2D" type="Node2D" unique_id=1201610413]
+
+[node name="Black" type="Sprite2D" parent="." unique_id=374648932]
+position = Vector2(1001.6954, 510.1906)
+scale = Vector2(0.5546875, 0.4953125)
+texture = ExtResource("1_yosh2")
