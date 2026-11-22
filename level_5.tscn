@@ -36,7 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://c5kwy1ono64qr" path="res://heartb/image (3).webp" id="34_j83jw"]
 [ext_resource type="Texture2D" uid="uid://dulkc20ajmrh3" path="res://heartb/image (4).webp" id="35_ymt52"]
 [ext_resource type="Texture2D" uid="uid://d26doanptckkm" path="res://heartb/image.webp" id="36_avc04"]
-[ext_resource type="Script" uid="uid://b8ek627gl1v12" path="res://flag.gd" id="37_x7arg"]
 [ext_resource type="Texture2D" uid="uid://cd5sqhc1utup4" path="res://flag.png" id="38_n3i13"]
 [ext_resource type="Texture2D" uid="uid://cm06vlxbchsnf" path="res://heat/cold.webp" id="39_72x67"]
 [ext_resource type="Texture2D" uid="uid://cyv7qqbbh583y" path="res://heat/hot.webp" id="40_ubiow"]
@@ -10012,7 +10011,6 @@ position_smoothing_enabled = true
 
 [node name="flag" type="Area2D" parent="." unique_id=1153725320 groups=["flag", "object"]]
 position = Vector2(7175, 547)
-script = ExtResource("37_x7arg")
 
 [node name="Sprite2D" type="Sprite2D" parent="flag" unique_id=705629964 groups=["flag"]]
 texture = ExtResource("38_n3i13")
@@ -10138,7 +10136,7 @@ position = Vector2(725, -222)
 position = Vector2(1399, 417)
 shape = SubResource("RectangleShape2D_gabc6")
 
-[node name="spike4" type="Area2D" parent="." unique_id=1298986879]
+[node name="spike4" type="Area2D" parent="." unique_id=1298986879 groups=["spike"]]
 position = Vector2(648, -176)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="spike4" unique_id=597368409]
@@ -10204,7 +10202,7 @@ position = Vector2(-715.9999, 60)
 scale = Vector2(4.8233323, 2.6666667)
 texture = ExtResource("52_pwm4h")
 
-[node name="spike2" type="Area2D" parent="." unique_id=555926081]
+[node name="spike2" type="Area2D" parent="." unique_id=555926081 groups=["spike"]]
 position = Vector2(-294, -15)
 
 [node name="Sprite2D" type="Sprite2D" parent="spike2" unique_id=1663418165 groups=["flag"]]
@@ -10293,7 +10291,7 @@ position = Vector2(-427.99976, -456)
 scale = Vector2(3.9583333, 9.32)
 texture = ExtResource("52_pwm4h")
 
-[node name="spike3" type="Area2D" parent="." unique_id=238351829]
+[node name="spike3" type="Area2D" parent="." unique_id=238351829 groups=["spike"]]
 position = Vector2(231, -133)
 
 [node name="Sprite2D" type="Sprite2D" parent="spike3" unique_id=679892822]
@@ -10305,7 +10303,7 @@ texture = ExtResource("47_bcu7o")
 position = Vector2(642, 221)
 shape = SubResource("ConvexPolygonShape2D_kxd3k")
 
-[node name="spike5" type="Area2D" parent="." unique_id=1398457450]
+[node name="spike5" type="Area2D" parent="." unique_id=1398457450 groups=["spike"]]
 position = Vector2(3750, 143)
 
 [node name="Sprite2D" type="Sprite2D" parent="spike5" unique_id=1850408064]
@@ -10317,7 +10315,7 @@ texture = ExtResource("47_bcu7o")
 position = Vector2(642, 221)
 shape = SubResource("ConvexPolygonShape2D_kxd3k")
 
-[node name="spike6" type="Area2D" parent="." unique_id=1456145300]
+[node name="spike6" type="Area2D" parent="." unique_id=1456145300 groups=["spike"]]
 position = Vector2(4130, 147)
 
 [node name="Sprite2D" type="Sprite2D" parent="spike6" unique_id=2097704108]
@@ -10329,7 +10327,7 @@ texture = ExtResource("47_bcu7o")
 position = Vector2(642, 221)
 shape = SubResource("ConvexPolygonShape2D_kxd3k")
 
-[node name="spike7" type="Area2D" parent="." unique_id=174462602]
+[node name="spike7" type="Area2D" parent="." unique_id=174462602 groups=["spike"]]
 position = Vector2(4513, 149)
 
 [node name="Sprite2D" type="Sprite2D" parent="spike7" unique_id=245870172]
@@ -10341,7 +10339,7 @@ texture = ExtResource("47_bcu7o")
 position = Vector2(642, 221)
 shape = SubResource("ConvexPolygonShape2D_kxd3k")
 
-[node name="spike8" type="Area2D" parent="." unique_id=269670461]
+[node name="spike8" type="Area2D" parent="." unique_id=269670461 groups=["spike"]]
 position = Vector2(4824, 152)
 
 [node name="Sprite2D" type="Sprite2D" parent="spike8" unique_id=2092607548 groups=["flag"]]
@@ -10360,7 +10358,7 @@ position = Vector2(905.25, 550)
 scale = Vector2(0.25972226, 0.25972223)
 shape = SubResource("ConvexPolygonShape2D_d8dyn")
 
-[node name="spike9" type="Area2D" parent="." unique_id=1684883602]
+[node name="spike9" type="Area2D" parent="." unique_id=1684883602 groups=["spike"]]
 position = Vector2(5342, 20)
 
 [node name="Sprite2D" type="Sprite2D" parent="spike9" unique_id=460828667]
@@ -10372,7 +10370,7 @@ texture = ExtResource("47_bcu7o")
 position = Vector2(567, 174)
 shape = SubResource("ConvexPolygonShape2D_emfp8")
 
-[node name="spike10" type="Area2D" parent="." unique_id=1521425598]
+[node name="spike10" type="Area2D" parent="." unique_id=1521425598 groups=["spike"]]
 position = Vector2(5975, 21)
 
 [node name="Sprite2D" type="Sprite2D" parent="spike10" unique_id=2131446529]
@@ -10384,7 +10382,7 @@ texture = ExtResource("47_bcu7o")
 position = Vector2(567, 174)
 shape = SubResource("ConvexPolygonShape2D_emfp8")
 
-[node name="spike11" type="Area2D" parent="." unique_id=1529246946]
+[node name="spike11" type="Area2D" parent="." unique_id=1529246946 groups=["spike"]]
 position = Vector2(5906, 142)
 
 [node name="Sprite2D" type="Sprite2D" parent="spike11" unique_id=1668645947 groups=["flag"]]

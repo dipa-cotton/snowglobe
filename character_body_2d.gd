@@ -22,8 +22,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_pressed("reset"):
-		print("?")
-		#Global.last_level = get_tree().current_scene.scene_file_path
 		get_tree().reload_current_scene()
 
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -40,7 +38,6 @@ func _on_pickup_area_area_entered(area):
 		$holding.visible = true
 	
 	if area.is_in_group("breakice"):
-		print("ice")
 		if !area.get_node("breakice2").is_playing():
 			area.get_node("breakice2").play("breakice")
 			await get_tree().create_timer(3.0).timeout
@@ -53,6 +50,10 @@ func _on_pickup_area_area_entered(area):
 			$"../breakice".show()
 			$"../breakice/CollisionShape2D".set_deferred("disabled", false)
 		
+	if area.is_in_group("spike"):
+		health -= 2
+		updateBar()
+		
 func _process(_delta):	
 	if $holding.visible and not is_playing_heart:
 		is_playing_heart = true
@@ -61,7 +62,6 @@ func _process(_delta):
 		is_playing_heart = false
 		health += 1
 		updateBar()
-		print(health)
 		
 	$holding.visible = is_playing_heart
 	_animated_sprite.visible = !is_playing_heart
@@ -92,18 +92,7 @@ func _process(_delta):
 		_animated_sprite.stop()
 
 func _on_flag_area_entered(area: Area2D) -> void:
-	#area.next_level 
 	get_tree().change_scene_to_file("res://level_" + str(next_level) + ".tscn")
-	#level += 1
-	#print(level)
-	#print("level!")
-	#get_tree().change_scene_to_file("res://level_2.tscn")
-
-	
-func _on_spike_area_entered(area: Area2D) -> void:
-	health -= 2
-	prints(health, "spike area1")
-	updateBar()
 func updateBar():
 	$"../CanvasLayer/health_label".text = "[color=red][font=res://roboto.ttf][font_size=32]Health: %d" % health
 	if health == 1:
@@ -118,19 +107,3 @@ func updateBar():
 		$"../CanvasLayer/hot".visible = true
 		$"../CanvasLayer/cold".visible = false
 		$"../CanvasLayer/mid".visible = false
-func _on_spike_4_area_entered(area: Area2D) -> void:
-	health -= 2
-	print(area.name)
-	updateBar()
-func _on_spike_2_area_entered(area: Area2D) -> void:
-	health -= 2
-	print(area.name)
-	updateBar()
-#func _on_light_area_entered(area: Area2D) -> void:
-		#light_timer.start()
-#
-#func _on_light_area_exited(area: Area2D) -> void:
-	## Stop the timer if the character leaves the light early
-	#if area.is_in_group("light"):
-		#light_timer.stop()
-" "
