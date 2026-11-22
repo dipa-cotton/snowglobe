@@ -1,17 +1,4 @@
 [gd_scene format=3 uid="uid://bp2b188ggp0w6"]
 
-[ext_resource type="Texture2D" uid="uid://dy8eqqybau6xb" path="res://heart.webp" id="1_l2ofb"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_gabc6"]
-radius = 15.0
-
 [node name="object" type="Area2D" unique_id=807184597 groups=["object"]]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1042765374 groups=["object"]]
-position = Vector2(103.99999, 99.99994)
-scale = Vector2(0.52687496, 0.49656254)
-texture = ExtResource("1_l2ofb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1693595061 groups=["object"]]
-position = Vector2(176, 68)
-shape = SubResource("CircleShape2D_gabc6")
+position = Vector2(-81, 0)

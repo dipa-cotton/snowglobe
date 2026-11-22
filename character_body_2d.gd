@@ -32,43 +32,59 @@ func _on_pickup_area_area_entered(area):
 	if area.is_in_group("object") and not $holding.visible:
 		area.queue_free()
 		$holding.visible = true
+	if area.is_in_group("breakice"):
+		print("ice")
+		area.get_node("breakice2").play("breakice")
+		await get_tree().create_timer(3.0).timeout
+		$"../breakarea/breakice2".visible = false
+		$"../breakice".hide()
+		$"../breakice/CollisionShape2D".set_deferred("disabled", true)
 	
-func _input(event):
-	if $holding.visible and not is_playing_heart and Input.is_action_pressed("ui_right"):
+		
+func _process(_delta):	
+	if $holding.visible and not is_playing_heart:
 		is_playing_heart = true
-		$AnimatedSprite2D.visible = false
-		$holding.play("heart")
 		await get_tree().create_timer(1.0).timeout
 		$holding.visible = false
-		$AnimatedSprite2D.visible = true
 		is_playing_heart = false
 		health += 1
 		updateBar()
 		print(health)
 		
-	elif $holding.visible and not is_playing_heart and Input.is_action_pressed("ui_left"):
-		is_playing_heart = true
-		$AnimatedSprite2D.visible = false
-		$holding.play("heartb")
-		await get_tree().create_timer(1.0).timeout
-		$holding.visible = false
-		$AnimatedSprite2D.visible = true
-		is_playing_heart = false
-		
-func _process(_delta):
-	if is_playing_heart:
-		return
+	$holding.visible = is_playing_heart
+	_animated_sprite.visible = !is_playing_heart
 	if Input.is_action_pressed("ui_right"):
-		_animated_sprite.play("run")
+		if Input.is_action_pressed("ui_down"):
+			if is_playing_heart:
+				$holding.play("heartcrouch")
+			else:
+				_animated_sprite.play("crouch")
+		else:
+			if is_playing_heart:
+				$holding.play("heart")
+			else:
+				_animated_sprite.play("run")
 	elif Input.is_action_pressed("ui_left"):
-		_animated_sprite.play("run_backwards")
-	elif Input.is_action_pressed("jump"):
-		_animated_sprite.play("jump")
+		if Input.is_action_pressed("ui_down"):
+			if is_playing_heart:
+				$holding.play("heartcrouchb")
+			else:
+				_animated_sprite.play("bcrouch")
+		else:
+			if is_playing_heart:
+				$holding.play("heartb")
+			else:
+				_animated_sprite.play("run_backwards")
 	else:
+		$holding.stop()
 		_animated_sprite.stop()
-		
+
 func _on_flag_area_entered(area: Area2D) -> void:
-	level =+ 1
+	level += 1
+	print(level)
+	print("level!")
+	get_tree().change_scene_to_file("res://level_2.tscn")
+
 	
 func _on_spike_area_entered(area: Area2D) -> void:
 	health -= 2
@@ -84,3 +100,7 @@ func updateBar():
 	if health >= 3:
 		$"../CanvasLayer/cold".visible = false
 		$"../CanvasLayer/mid".visible = false
+func _on_spike_2_area_entered(area: Area2D) -> void:
+	health -= 2
+	print(health)
+	updateBar()
