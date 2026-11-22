@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://xj4swaq4cx2g"]
+
+[ext_resource type="Texture2D" uid="uid://c4sgusbj5t0wf" path="res://background.webp" id="1_1n0d2"]
+[ext_resource type="Texture2D" uid="uid://pmy5suv6gt3x" path="res://icenez.webp" id="2_y5hus"]
+[ext_resource type="Texture2D" uid="uid://gdukwuej86vr" path="res://start.png" id="3_oiuna"]
+
+[node name="Node2D" type="Node2D" unique_id=75098229]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1679407923]
+position = Vector2(572.5, 323.5)
+scale = Vector2(0.5984375, 0.60833335)
+texture = ExtResource("1_1n0d2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=394522908]
+position = Vector2(558, 328)
+scale = Vector2(0.65, 0.653125)
+texture = ExtResource("2_y5hus")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1092734749]
+position = Vector2(917, 331.00003)
+scale = Vector2(0.3857422, 0.43164063)
+texture = ExtResource("3_oiuna")
