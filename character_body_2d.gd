@@ -3,10 +3,10 @@ extends CharacterBody2D
 var health: int = 3:
 	set(value):
 		health = value
-
 		if health <= 0:
-			get_tree().call_deferred("reload_current_scene")
-
+			Global.last_level = get_tree().current_scene.scene_file_path
+			get_tree().change_scene_to_file("res://dead.tscn")
+			
 var level = 0
 var is_playing_heart = false
 @onready var _animated_sprite = $AnimatedSprite2D
