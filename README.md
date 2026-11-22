@@ -1,6 +1,8 @@
 # Ice & Easy
 This is a fun game made in Godot for Snowglobe- a girls-only hackathon hosted in San Francisco for teenagers to be creative and make their own projects!
 
+​You play the game (which we titled ice & easy) as the main character Chip Matthew Cone, an ice cream character who is determined to save his friends after disappearing in an icy freezer. So far, we've hand drawn the background, effects, ice sprites, and characters. You are able to see your health bar displayed- which can lower after hitting harmful spikes and increase after consuming a health assist heart.
+
 **live demo:** https://dipa-cotton.itch.io/ice-easy
 **built by:** Diya Panthulu (@dipa-cotton) - Marlowe Chang - Zee Navarro
 
