@@ -41,8 +41,8 @@
 [ext_resource type="Texture2D" uid="uid://cm06vlxbchsnf" path="res://heat/cold.webp" id="39_72x67"]
 [ext_resource type="Texture2D" uid="uid://cyv7qqbbh583y" path="res://heat/hot.webp" id="40_ubiow"]
 [ext_resource type="Texture2D" uid="uid://bvmbse6dn3qpl" path="res://heat/mid.webp" id="41_7nn81"]
-[ext_resource type="Texture2D" uid="uid://c4sgusbj5t0wf" path="res://background.webp" id="42_3bmjl"]
-[ext_resource type="AudioStream" uid="uid://bpbj24o3a3yf0" path="res://audio.mp3" id="43_sq10x"]
+[ext_resource type="Texture2D" uid="uid://dgh3vjysbnght" path="res://dark.png" id="42_kxd3k"]
+[ext_resource type="AudioStream" uid="uid://q7353j352m3h" path="res://chase.mp3" id="43_d2f5c"]
 [ext_resource type="Texture2D" uid="uid://guix23pwjggw" path="res://slabcrack/slabc1.webp" id="44_02dsm"]
 [ext_resource type="Texture2D" uid="uid://b3wifilgkud7m" path="res://slabcrack/slabc2.png" id="45_f6id5"]
 [ext_resource type="Texture2D" uid="uid://c5i5fv65w3bf8" path="res://slabcrack/slabc3.webp" id="46_h8lhn"]
@@ -9952,9 +9952,6 @@ points = PackedVector2Array(280.10693, -134.75928, 187.70044, 19.25122, 129.9465
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kxd3k"]
 points = PackedVector2Array(3, 164, 83, -58, -71, -59)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvp03"]
-size = Vector2(308, 106)
-
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_emfp8"]
 points = PackedVector2Array(86, 369, 166, -4, 0, 0)
 
@@ -10070,19 +10067,15 @@ texture = ExtResource("40_ubiow")
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1611863127]
 layer = -9
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=494479613]
-z_index = -4
-offset_left = -35.0
-offset_top = -35.0
-offset_right = 1327.0
-offset_bottom = 748.0
-texture = ExtResource("42_3bmjl")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=299914620]
+offset_left = -96.0
+offset_top = -161.0
+offset_right = 1824.0
+offset_bottom = 919.0
+texture = ExtResource("42_kxd3k")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=911534926]
-stream = ExtResource("43_sq10x")
+stream = ExtResource("43_d2f5c")
 autoplay = true
 
 [node name="breakarea" type="Area2D" parent="." unique_id=2104567349 groups=["breakice"]]
@@ -10367,58 +10360,6 @@ position = Vector2(905.25, 550)
 scale = Vector2(0.25972226, 0.25972223)
 shape = SubResource("ConvexPolygonShape2D_d8dyn")
 
-[node name="breakarea7" type="Area2D" parent="." unique_id=396048892 groups=["breakice"]]
-position = Vector2(4947, 225)
-
-[node name="breakice2" type="AnimatedSprite2D" parent="breakarea7" unique_id=29432549 groups=["breakice"]]
-position = Vector2(1388, 410)
-scale = Vector2(0.27222225, 0.27222228)
-sprite_frames = SubResource("SpriteFrames_ftsj4")
-animation = &"breakice"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="breakarea7" unique_id=2056526100 groups=["breakice"]]
-position = Vector2(1370, 424)
-shape = SubResource("RectangleShape2D_xvp03")
-
-[node name="breakarea8" type="Area2D" parent="." unique_id=1593227979 groups=["breakice"]]
-position = Vector2(4948, 112)
-
-[node name="breakice2" type="AnimatedSprite2D" parent="breakarea8" unique_id=1072251699 groups=["breakice"]]
-position = Vector2(1388, 410)
-scale = Vector2(0.27222225, 0.27222228)
-sprite_frames = SubResource("SpriteFrames_ftsj4")
-animation = &"breakice"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="breakarea8" unique_id=827281857 groups=["breakice"]]
-position = Vector2(1370, 424)
-shape = SubResource("RectangleShape2D_xvp03")
-
-[node name="breakarea9" type="Area2D" parent="." unique_id=454249962 groups=["breakice"]]
-position = Vector2(4949, -2)
-
-[node name="breakice2" type="AnimatedSprite2D" parent="breakarea9" unique_id=1437950736 groups=["breakice"]]
-position = Vector2(1388, 410)
-scale = Vector2(0.27222225, 0.27222228)
-sprite_frames = SubResource("SpriteFrames_ftsj4")
-animation = &"breakice"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="breakarea9" unique_id=1651384558 groups=["breakice"]]
-position = Vector2(1370, 424)
-shape = SubResource("RectangleShape2D_xvp03")
-
-[node name="breakarea10" type="Area2D" parent="." unique_id=1035978784 groups=["breakice"]]
-position = Vector2(4950, -115)
-
-[node name="breakice2" type="AnimatedSprite2D" parent="breakarea10" unique_id=1597436985 groups=["breakice"]]
-position = Vector2(1388, 410)
-scale = Vector2(0.27222225, 0.27222228)
-sprite_frames = SubResource("SpriteFrames_ftsj4")
-animation = &"breakice"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="breakarea10" unique_id=819065130 groups=["breakice"]]
-position = Vector2(1370, 424)
-shape = SubResource("RectangleShape2D_xvp03")
-
 [node name="spike9" type="Area2D" parent="." unique_id=1684883602]
 position = Vector2(5342, 20)
 
@@ -10461,34 +10402,6 @@ z_index = 7
 position = Vector2(905.25, 550)
 scale = Vector2(0.25972226, 0.25972223)
 shape = SubResource("ConvexPolygonShape2D_d8dyn")
-
-[node name="breakice7" type="StaticBody2D" parent="." unique_id=1824424673]
-position = Vector2(4946, -109)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="breakice7" unique_id=1128362904]
-position = Vector2(1399, 417)
-shape = SubResource("RectangleShape2D_gabc6")
-
-[node name="breakice8" type="StaticBody2D" parent="." unique_id=665220291]
-position = Vector2(4945, 4)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="breakice8" unique_id=1773235951]
-position = Vector2(1399, 417)
-shape = SubResource("RectangleShape2D_gabc6")
-
-[node name="breakice9" type="StaticBody2D" parent="." unique_id=1012379070]
-position = Vector2(4945, 120)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="breakice9" unique_id=1629650480]
-position = Vector2(1399, 417)
-shape = SubResource("RectangleShape2D_gabc6")
-
-[node name="breakice10" type="StaticBody2D" parent="." unique_id=548906843]
-position = Vector2(4945, 234)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="breakice10" unique_id=846182238]
-position = Vector2(1399, 417)
-shape = SubResource("RectangleShape2D_gabc6")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1559251400]
 offset_left = 6841.0
